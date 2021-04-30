@@ -26,10 +26,10 @@ export class WeatherMainComponent implements OnInit {
         response => {
           this.setWeatherData(response);
           this.renderList.push(this.weatherData);
-          this.renderList.splice(0, 1);
         }
       )
-      this.renderList.push(this.citiesList[0]);
+      // this.renderList.push(this.citiesList[0]);
+      this.renderList.splice(0, 1);
     }
     this.timer = setInterval(() => {
       if (this.index < this.citiesList.length) {
@@ -45,7 +45,7 @@ export class WeatherMainComponent implements OnInit {
       } else {
         clearInterval(this.timer); // this is optional but good practice
       }
-    }, 4000)
+    }, 10000)
   }
 
   setWeatherData(data){

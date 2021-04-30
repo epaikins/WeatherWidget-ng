@@ -1,7 +1,31 @@
-<div *ngFor="let city of renderList">
+<!-- <div id="divWeatherMain" *ngFor="let city of renderList">
     <p>{{ city.temp_celcius }}</p>
     <span>{{ city.min }} /</span><span>{{ city.max }} </span>
     <span>Feels like: </span><span>{{ city.temp_feels_like }}</span>
     <p>{{ city.name }}</p>
     <p>{{ city.humidity }}</p>
+</div> -->
+<h2>Weather Widget</h2>
+<div class="flex">
+<div id="divWeatherMain">
+  <div class="child" *ngFor="let city of renderList">
+    <div *ngIf="city.isDay" class="weatherWidgetRow">
+      <i class="fas fa-3x fa-sun sun"></i>
+    </div>
+    <div *ngIf="!city.isDay" class="weatherWidgetRow">
+      <i class="fas fa-3x fa-moon moon"></i>
+    </div>
+    <div *ngIf="city.isDay" class="weatherWidgetRow cloudDiv">
+      <i class="fas fa-cloud fa-3x cloud"></i>
+    </div>
+    <div *ngIf="!city.isDay" class="weatherWidgetRow cloudDiv">
+        <i class="fas fa-cloud fa-3x cloud dark"></i>
+      </div>
+    <div class="weatherWidgetRow" style="font-size: 32px;margin-top: 5px;">{{city.temp_celcius}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 18px;margin-top: 10px;">{{city.min}}° / {{city.max}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 20px;">Feels Like: {{city.temp_feels_like}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 30px;margin-top: 30px;">{{city.name}}</div>
+    <div class="weatherWidgetRow" style="font-size: 18px;margin-top: 30px;">Humidity: {{city.humidity}}%</div>
+  </div>
+</div>
 </div>

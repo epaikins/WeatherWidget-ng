@@ -1,0 +1,79 @@
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    font-size: 50px;
+    text-align: center;
+    color: rgb(0,0,0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+}
+#divWeatherMain{
+    display: block;
+    border-radius: 10px;
+    width: 300px;
+    height: 320px;
+    /* background: rgb(0,0,0); */
+    /* rgba(0,0,0,1) 0%, rgba(8,7,42,1) 75%, rgb(8, 10, 63) */
+    background: linear-gradient(180deg, rgb(1, 77, 77) 0%, rgb(1, 148, 148) 75%, rgb(0, 196, 196) 100%);
+    color: whitesmoke;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 50px;
+    box-shadow: 2px 2px 20px 0.5px rgba(0, 0, 0, 0.3);
+}
+
+#divWeatherMain .child{
+    animation: fadeIn 5s ease-in-out both;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+
+.weatherWidgetRow{
+    display:block;
+    margin:0 auto;
+    width: fit-content;
+}
+
+.sun{
+    margin-top: 20px;
+    color: yellow;
+    filter: drop-shadow( 1px 1px 10px yellow);
+}
+
+.moon{
+    margin-top: 20px;
+    color: white;
+    filter: drop-shadow( 1px 1px 10px white);
+}
+
+.cloudDiv{
+    margin-top: -40px;
+}
+
+.cloud{
+    color: white;
+    filter: drop-shadow( 1px 1px 5px rgb(104, 175, 197));
+    animation-name: cloudMovement;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+
+.dark{
+    color: rgb(104, 175, 197);
+    
+}
+
+@keyframes cloudMovement{
+    from{margin-left: -55px;}
+    to{margin-left: 65px;}
+}
